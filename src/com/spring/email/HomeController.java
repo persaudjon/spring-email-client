@@ -14,8 +14,12 @@ public class HomeController {
 	public String ShowHomePage() {
 		return "main-page";
 	}
-	@RequestMapping("/signup")
+	@RequestMapping("/signuppage")
 	public String showLoginInfo(HttpServletRequest req , Model model ){
+		return "sign-up";
+	}
+	@RequestMapping("/homepage")
+	public String showHomePage(HttpServletRequest req, Model model) {
 		String emailAddress = req.getParameter("email") + "@" + req.getParameter("domainName");
 		String password = req.getParameter("psw");
 		model.addAttribute("emailAddress", emailAddress);

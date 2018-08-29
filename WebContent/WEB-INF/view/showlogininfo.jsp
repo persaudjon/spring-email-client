@@ -4,10 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>${emailAddress} HomePage</title>
 </head>
 <body>
-
-hello ${emailAddress} ${password}
+<table>
+  <tr>
+    <th>Sender</th>
+    <th>Subject</th>
+    <th>Message</th>
+  </tr>
+  <tr>
+    <td>mike</td>
+    <td>coding in spring</td>
+    <td>Coding is fun for me</td>
+  </tr>
+</table>
 </body>
 </html>
