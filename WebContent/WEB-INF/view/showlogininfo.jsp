@@ -9,9 +9,12 @@
 <body>
 <table>
   <tr>
-    <th>Sender</th>
     <th>Subject</th>
+    <th>From</th>
+    <th>To</th>
     <th>Message</th>
+    <th>Time/Date</th>
+    
   </tr>
   <tr>
     <td>mike</td>

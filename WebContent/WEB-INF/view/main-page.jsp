@@ -5,12 +5,14 @@
 <body>
 
 <h2>Sign Up Here</h2>
-<form action="signuppage">
+<form action="signup">
     <input type="submit" value="SignUp" />
 </form>
 
 <h2>Login</h2>
-<button type="button" onclick="">Login</button>
+<form action="login">
+    <input type="submit" value="Login" />
+</form>
  
 </body>
 </html>
