@@ -20,7 +20,7 @@ public class InboxProcess {
 	
 	private void createSessionFactory() {
 		factory = new Configuration().configure("hibernate.cfg.xml")
-				.addAnnotatedClass(EmailUserEntity.class).buildSessionFactory();
+				.addAnnotatedClass(EmailEntity.class).buildSessionFactory();
 		createDBSession();
 	}
 	

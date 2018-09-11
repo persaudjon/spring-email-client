@@ -39,7 +39,6 @@ public class HomeController {
 		//tempCode
 		model.addAttribute("emailAddress", emailAddress);
 		model.addAttribute("password", password);
-		
 		return "showlogininfo";
 		
 	}
@@ -49,6 +48,7 @@ public class HomeController {
 		// retrieves data from form & Connects @ symbol to email
 		String emailAddress = req.getParameter("email");
 		String password = req.getParameter("psw");
+		model.addAttribute("emailAddress", emailAddress);
 		//creates new row in DB
 		LoginProcessing loginUser = new LoginProcessing();
 		loginUser.emailUniqueValidation(emailAddress, password);
@@ -57,12 +57,19 @@ public class HomeController {
 		if(loginValid == true) {
 			InboxProcess inbx = new InboxProcess();
 			java.util.List<EmailEntity> messages = inbx.messagesForUsers(emailAddress);
+			
+			model.addAttribute("messages", messages);
 			return "showlogininfo";
 		}
 		else {
 			// need to redirect back to login page
 			return "invalid-login";
 		}
+	}
+	
+	@RequestMapping("/sendmail")
+	public String showSendForm(HttpServletRequest req, Model model) {
+		return "sendmail";
 	}
 	
 	   

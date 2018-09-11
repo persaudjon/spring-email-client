@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,53 +8,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Mane-Mail</title>
+    <title>Send Mail</title>
   </head>
-  
-  
-  
-  
-  
-  
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">J-Mail</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link">Welcome <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" >
-        <a class="nav-link" href="/Email-Client-App/signup?" >SignUp</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Email-Client-App/login?">Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-  
-  
-  
-  
-  
-  
-  
-  
   <body>
+  <h2>Send e-mail to ${email}:</h2>
+<form action="sendmail" enctype="text/plain">
+Subject:<br>
+<input type="text" name="subject"><br>
+To:<br>
+<input type="text" name="to" placeholder="Receipent"><br>
+Message:<br>
+<textarea rows="10" cols="50" placeholder="Write your email here..."></textarea>
 
-      <h2>Sign Up Here</h2>
-<form action="signup">
-    <input type="submit" value="SignUp" />
+</textarea><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
 </form>
-
-<h2>Login</h2>
-<form action="login">
-    <input type="submit" value="Login" />
-</form>
+      
+      
+      
+      
       
 
     <!-- Optional JavaScript -->

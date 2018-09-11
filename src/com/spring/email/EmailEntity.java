@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="inbox_email")
 public class EmailEntity {
@@ -73,8 +74,14 @@ public class EmailEntity {
 		return timeSent;
 	}
 
+	public String getMessage() {
+		return message;
+	}
 
-	
-	
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+		
 
 }
