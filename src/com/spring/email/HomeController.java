@@ -1,5 +1,8 @@
 package com.spring.email;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,6 +17,8 @@ import antlr.collections.List;
 
 @Controller
 public class HomeController {
+	
+	public String emailAdd = "";
 
 	@RequestMapping("/")
 	public String ShowHomePage() {
@@ -37,6 +42,7 @@ public class HomeController {
 		EmailSignUpProcessing initialEmailUser = new EmailSignUpProcessing();
 		boolean validSignup = initialEmailUser.createNewEmailUser(emailAddress, password);
 		//tempCode
+		emailAdd = emailAddress; 
 		model.addAttribute("emailAddress", emailAddress);
 		model.addAttribute("password", password);
 		return "showlogininfo";
@@ -55,6 +61,7 @@ public class HomeController {
 		boolean loginValid = loginUser.isLoginValid();
 		
 		if(loginValid == true) {
+			emailAdd = req.getParameter("email"); 
 			InboxProcess inbx = new InboxProcess();
 			java.util.List<EmailEntity> messages = inbx.messagesForUsers(emailAddress);
 			
@@ -69,7 +76,21 @@ public class HomeController {
 	
 	@RequestMapping("/sendmail")
 	public String showSendForm(HttpServletRequest req, Model model) {
+		model.addAttribute("loggedInUser", emailAdd);
 		return "sendmail";
+	}
+	
+	@RequestMapping("/sendmailsuccess")
+	public String showSendReceipt(HttpServletRequest req, Model model) {
+		String subject = req.getParameter("subject");
+		String to = req.getParameter("to");
+		String message = req.getParameter("message");
+		
+		SendEmailProcessing newEmail = new SendEmailProcessing();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+		String timeSent =  LocalDateTime.now().toString();
+		newEmail.createNewEmailUser(subject, emailAdd, to, message, timeSent);
+		return "message-sent";
 	}
 	
 	   

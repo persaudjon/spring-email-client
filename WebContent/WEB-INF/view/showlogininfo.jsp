@@ -13,30 +13,52 @@
 
     <title>${emailAddress} HomePage</title>
   </head>
-  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">J-Mail</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link">Inbox<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="/Email-Client-App/sendmail?" >Send Mail</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
     
- <body>
-<form action="sendmail">
-    <input type="submit" value="Send Mail" />
-</form>
-<table>
-  <tr>
-    <th>Subject</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Message</th>
-    <th>Time/Date</th>
-  </tr>
-    <c:forEach items="${messages}" var="message" varStatus="status">
-        <tr>
+ <body class="bg-info text-white">
+     <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Subject</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Message</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+         
+  <tbody>
+ <c:forEach items="${messages}" var="message" varStatus="status">
+    <tr>
             <td>${message.getTitle()}</td>
             <td>${message.getFromUser()}</td>
             <td>${message.getToUser()}</td>
             <td>${message.getMessage()}</td>
             <td>${message.getTimeSent()}</td>
-        </tr>
-    </c:forEach>
+    </tr>
+     </c:forEach>
+  </tbody>
 </table>
+     
+     
 </body>
       
     <!-- Optional JavaScript -->

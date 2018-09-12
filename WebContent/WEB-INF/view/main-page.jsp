@@ -17,7 +17,7 @@
   
   
   
-  
+  <div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">J-Mail</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,16 +38,15 @@
     </ul>
   </div>
 </nav>
+  </div>
   
   
   
   
   
   
-  
-  
-  <body>
-
+  <div></div>
+	<body class="bg-info text-white" >
       <h2>Sign Up Here</h2>
 <form action="signup">
     <input type="submit" value="SignUp" />

@@ -10,15 +10,37 @@
 
     <title>Send Mail</title>
   </head>
-  <body>
-  <h2>Send e-mail to ${email}:</h2>
-<form action="sendmail" enctype="text/plain">
+  
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">J-Mail</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link">Send Mail<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="/Email-Client-App/homepage" >Inbox</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+  
+  <body class="bg-info text-white">
+  <h2>Send e-mail from ${loggedInUser}:</h2>
+  
+<form action="sendmailsuccess" enctype="text/plain">
 Subject:<br>
 <input type="text" name="subject"><br>
 To:<br>
 <input type="text" name="to" placeholder="Receipent"><br>
 Message:<br>
-<textarea rows="10" cols="50" placeholder="Write your email here..."></textarea>
+<textarea rows="10" cols="50" placeholder="Write your email here..." name ="message"></textarea>
 
 </textarea><br>
 <input type="submit" value="Send">
